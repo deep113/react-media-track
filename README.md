@@ -1,1 +1,13 @@
-# Media Tracking System in React
+Media Track
+---
+ 
+Welcome.
+ 
+ 
+ 
+Setup
+---
+ 
+```
+npm install
+```
