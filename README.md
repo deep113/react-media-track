@@ -20,3 +20,8 @@ Compile
 ```
 npm run compile
 ```
+
+Credits
+---
+
+https://github.com/apache/cordova-labs/tree/cdvtest
