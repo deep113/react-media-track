@@ -5,6 +5,11 @@ import React from 'react';
  */
 class About extends React.Component {
 
+		constructor() {
+		super();
+		document.getElementsByTagName('body')[0].className='about-page';
+			
+		}
  
   render() {
     return (
