@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
                 <span className="icon-bar" />
                 <span className="icon-bar" />
               </button>
-              <a className="navbar-brand" href="#"><span>Media Track</span> Admin</a>
+              <a className="navbar-brand" href="/#/home"><span>Media </span>Track</a>
               <ul className="user-menu">
                 <li className="dropdown pull-right">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown"><i className="fa fa-user" aria-hidden="true"></i> User <span className="caret" /></a>
