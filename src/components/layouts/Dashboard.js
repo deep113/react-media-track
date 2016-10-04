@@ -6,7 +6,34 @@ import { Router, Route, Link, browserHistory, IndexRoute, hashHistory } from 're
 class Dashboard extends React.Component {
 	 constructor(){
     super();
-        
+      this.state = {
+        homeactive: "active",
+        campaignactive: "",
+        clientactive: "",
+        purchase_orderactive: "",
+        request_orderactive: "",
+        vendoractive:""
+      };
+      //this.menuClick = this.menuClick.bind(this);
+    }
+    componentWillMount(){
+
+    
+    }
+    menuClick(flagactive) {
+ 
+      this.setState(
+        {
+        homeactive:flagactive=="homeactive"?"active":"" ,
+        campaignactive: flagactive=="campaignactive"?"active":"",
+        clientactive: flagactive=="clientactive"?"active":"",
+        purchase_orderactive: flagactive=="purchase_orderactive"?"active":"",
+        request_orderactive: flagactive=="request_orderactive"?"active":"",
+        vendoractive:flagactive=="vendoractive"?"active":""
+      }
+      );
+
+  
     }
   render() {
     console.log(this.props.location);
@@ -26,9 +53,9 @@ class Dashboard extends React.Component {
                 <li className="dropdown pull-right">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown"><i className="fa fa-user" aria-hidden="true"></i> User <span className="caret" /></a>
                   <ul className="dropdown-menu" role="menu">
-                    <li><Link to="/profile"><i className="fa fa-user-md" aria-hidden="true"></i> Profile</Link></li>
-                    <li><Link to="/settings"><i className="fa fa-cog" aria-hidden="true"></i> Settings</Link></li>
-                    <li><Link to="/login"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Link></li>
+                    <li className={this.state.profilective} onClick={this.menuClick.bind(this,'profilective')}><Link to="/profile"><i className="fa fa-user-md" aria-hidden="true"></i> Profile</Link></li>
+                    <li className={this.state.settingsactive} onClick={this.menuClick.bind(this,'settingsactive')}><Link to="/settings"><i className="fa fa-cog" aria-hidden="true"></i> Settings</Link></li>
+                    <li className={this.state.loginactive} onClick={this.menuClick.bind(this,'loginactive')}><Link to="/login"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -42,12 +69,12 @@ class Dashboard extends React.Component {
             </div>
           </form>
           <ul className="nav menu">
-            <li className="active"><Link to="/home"><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</Link></li>
-            <li><Link to="/campaign"><i className="fa fa-diamond" aria-hidden="true"></i> Campaign</Link></li>
-            <li><Link to="/client"><i className="fa fa-users" aria-hidden="true"></i> Client</Link></li>
-            <li><Link to="/purchase_order"><i className="fa fa-money" aria-hidden="true"></i> Purchase Order</Link></li>
-            <li><Link to="/request_order"><i className="fa fa-credit-card-alt" aria-hidden="true"></i> Request Order</Link></li>
-            <li><Link to="/vendor"><i className="fa fa-building-o" aria-hidden="true"></i> Vendor</Link></li>
+            <li className={this.state.homeactive} onClick={this.menuClick.bind(this,'homeactive')}><Link to="/home"><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</Link></li>
+            <li className={this.state.campaignactive} onClick={this.menuClick.bind(this,'campaignactive')}><Link to="/campaign"><i className="fa fa-diamond" aria-hidden="true"></i> Campaign</Link></li>
+            <li className={this.state.clientactive} onClick={this.menuClick.bind(this,'clientactive')}><Link to="/client"><i className="fa fa-users" aria-hidden="true"></i> Client</Link></li>
+            <li className={this.state.purchase_orderactive} onClick={this.menuClick.bind(this,'purchase_orderactive')}><Link to="/purchase_order"><i className="fa fa-money" aria-hidden="true"></i> Purchase Order</Link></li>
+            <li className={this.state.request_orderactive} onClick={this.menuClick.bind(this,'request_orderactive')}><Link to="/request_order"><i className="fa fa-credit-card-alt" aria-hidden="true"></i> Request Order</Link></li>
+            <li className={this.state.vendoractive} onClick={this.menuClick.bind(this,'vendoractive')}><Link to="/vendor"><i className="fa fa-building-o" aria-hidden="true"></i> Vendor</Link></li>
             <li role="presentation" className="divider" />
             
           </ul>
